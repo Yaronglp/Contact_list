@@ -1,10 +1,10 @@
 import {Component} from 'react';
-import MainBox from './js/components/member/MainBox';
-import MemberList from './js/components/member/MemberList';
-import AddMemberModal from './js/components/modal/AddMemberModal';
-import DelMemberModal from './js/components/modal/DelMemberModal';
-import MembersProvider from "./js/components/member/MembersProvider";
-import AddRemoveMember from "./js/components/member/AddRemoveMember";
+import MainBox from './components/member/MainBox';
+import MemberList from './components/member/MemberList';
+import AddMemberModal from './components/modal/AddMemberModal';
+import DelMemberModal from './components/modal/DelMemberModal';
+import MembersProvider from "./components/member/MembersProvider";
+import AddRemoveMember from "./components/member/AddRemoveMember";
 
 const LOCAL_STORAGE_KEY = 'contact_members';
 
