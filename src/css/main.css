@@ -97,11 +97,11 @@ body{
     animation-iteration-count:10;
 }
 
-.add_member_btn{
+.add_btn_container{
     background:#BD3;
 }
 
-.remove_member_btn{
+.remove_btn_container{
     background:orangered;
 }
 
@@ -115,11 +115,11 @@ body{
     to {box-shadow:0 0 50px;background-color:red;}
 }
 
-.add_member_btn:hover{
+.add_btn_container:hover{
     animation-name: plus_btn;
 }
 
-.remove_member_btn:hover{
+.remove_btn_container:hover{
     animation-name: minus_btn;
 }
 
