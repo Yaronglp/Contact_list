@@ -1038,8 +1038,8 @@ var _Icon2 = _interopRequireDefault(_Icon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var MemberIcon = function MemberIcon(props) {
-    var picture = props.picture,
-        fullname = props.fullname,
+    var fullname = props.fullname,
+        picture = props.picture,
         classProp = props.classProp,
         isMemberList = props.isMemberList,
         showFullNameLabel = props.showFullNameLabel,
@@ -1047,17 +1047,24 @@ var MemberIcon = function MemberIcon(props) {
         itemId = props.itemId;
 
 
+    var onImgError = function onImgError(e) {
+        if (e.target.nodeName === 'IMG') {
+            console.error('You are trying to use an invalid picture. please change it to a valid one');
+            e.target.src = MemberIcon.defaultProps.picture;
+        }
+    };
+
     return React.createElement(
-        "div",
+        'div',
         { className: classProp, onClick: function onClick() {
                 return clickHandler(itemId);
-            } },
+            }, onError: onImgError },
         React.createElement(_Icon2.default, { classname: isMemberList ? "img_icon list_member_pic" : "img_icon",
             url: picture,
             title: fullname }),
         showFullNameLabel ? React.createElement(
-            "h3",
-            { className: "truncate" },
+            'h3',
+            { className: 'truncate' },
             fullname
         ) : null
     );
