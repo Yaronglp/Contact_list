@@ -65,6 +65,21 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(21);
+} else {
+  module.exports = __webpack_require__(22);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -252,21 +267,6 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(21);
-} else {
-  module.exports = __webpack_require__(22);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 2 */
@@ -465,10 +465,78 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(18);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+var IconBase = function IconBase(_ref, _ref2) {
+  var children = _ref.children;
+  var color = _ref.color;
+  var size = _ref.size;
+  var style = _ref.style;
+  var width = _ref.width;
+  var height = _ref.height;
+
+  var props = _objectWithoutProperties(_ref, ['children', 'color', 'size', 'style', 'width', 'height']);
+
+  var _ref2$reactIconBase = _ref2.reactIconBase;
+  var reactIconBase = _ref2$reactIconBase === undefined ? {} : _ref2$reactIconBase;
+
+  var computedSize = size || reactIconBase.size || '1em';
+  return _react2.default.createElement('svg', _extends({
+    children: children,
+    fill: 'currentColor',
+    preserveAspectRatio: 'xMidYMid meet',
+    height: height || computedSize,
+    width: width || computedSize
+  }, reactIconBase, props, {
+    style: _extends({
+      verticalAlign: 'middle',
+      color: color || reactIconBase.color
+    }, reactIconBase.style || {}, style)
+  }));
+};
+
+IconBase.propTypes = {
+  color: _propTypes2.default.string,
+  size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  style: _propTypes2.default.object
+};
+
+IconBase.contextTypes = {
+  reactIconBase: _propTypes2.default.shape(IconBase.propTypes)
+};
+
+exports.default = IconBase;
+module.exports = exports['default'];
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -489,10 +557,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -558,75 +626,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(18);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var IconBase = function IconBase(_ref, _ref2) {
-  var children = _ref.children;
-  var color = _ref.color;
-  var size = _ref.size;
-  var style = _ref.style;
-  var width = _ref.width;
-  var height = _ref.height;
-
-  var props = _objectWithoutProperties(_ref, ['children', 'color', 'size', 'style', 'width', 'height']);
-
-  var _ref2$reactIconBase = _ref2.reactIconBase;
-  var reactIconBase = _ref2$reactIconBase === undefined ? {} : _ref2$reactIconBase;
-
-  var computedSize = size || reactIconBase.size || '1em';
-  return _react2.default.createElement('svg', _extends({
-    children: children,
-    fill: 'currentColor',
-    preserveAspectRatio: 'xMidYMid meet',
-    height: height || computedSize,
-    width: width || computedSize
-  }, reactIconBase, props, {
-    style: _extends({
-      verticalAlign: 'middle',
-      color: color || reactIconBase.color
-    }, reactIconBase.style || {}, style)
-  }));
-};
-
-IconBase.propTypes = {
-  color: _propTypes2.default.string,
-  size: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  width: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  height: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-  style: _propTypes2.default.object
-};
-
-IconBase.contextTypes = {
-  reactIconBase: _propTypes2.default.shape(IconBase.propTypes)
-};
-
-exports.default = IconBase;
-module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -644,7 +644,7 @@ module.exports = exports['default'];
 
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(4);
-  var warning = __webpack_require__(6);
+  var warning = __webpack_require__(7);
   var ReactPropTypesSecret = __webpack_require__(9);
   var loggedTypeFailures = {};
 }
@@ -693,7 +693,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 9 */
@@ -832,7 +832,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 12 */
@@ -1135,7 +1135,7 @@ if (process.env.NODE_ENV !== 'production') {
   module.exports = __webpack_require__(37)();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 19 */
@@ -1150,7 +1150,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1194,7 +1194,7 @@ exports.default = Modal;
 "use strict";
 
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -1206,7 +1206,7 @@ var _App = __webpack_require__(32);
 
 var _App2 = _interopRequireDefault(_App);
 
-__webpack_require__(47);
+__webpack_require__(48);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1229,7 +1229,7 @@ window.React = _react2.default;
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(5),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(3),n=__webpack_require__(6),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -1266,9 +1266,9 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(3);
-var emptyObject = __webpack_require__(5);
+var emptyObject = __webpack_require__(6);
 var invariant = __webpack_require__(4);
-var warning = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(8);
 
@@ -2606,7 +2606,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 23 */
@@ -2652,7 +2652,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(27);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 24 */
@@ -2671,7 +2671,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),l=__webpack_require__(10),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(11),da=__webpack_require__(12),ea=__webpack_require__(13),fa=__webpack_require__(14),ia=__webpack_require__(15),D=__webpack_require__(5);
+var aa=__webpack_require__(0),l=__webpack_require__(10),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(11),da=__webpack_require__(12),ea=__webpack_require__(13),fa=__webpack_require__(14),ia=__webpack_require__(15),D=__webpack_require__(6);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2968,9 +2968,9 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
+var React = __webpack_require__(0);
 var invariant = __webpack_require__(4);
-var warning = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var ExecutionEnvironment = __webpack_require__(10);
 var _assign = __webpack_require__(3);
 var emptyFunction = __webpack_require__(2);
@@ -2979,7 +2979,7 @@ var getActiveElement = __webpack_require__(12);
 var shallowEqual = __webpack_require__(13);
 var containsNode = __webpack_require__(14);
 var focusNode = __webpack_require__(15);
-var emptyObject = __webpack_require__(5);
+var emptyObject = __webpack_require__(6);
 var checkPropTypes = __webpack_require__(8);
 var hyphenateStyleName = __webpack_require__(28);
 var camelizeStyleName = __webpack_require__(30);
@@ -18346,7 +18346,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 28 */
@@ -18517,7 +18517,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _MainBox = __webpack_require__(33);
 
@@ -18527,9 +18527,9 @@ var _MemberList = __webpack_require__(41);
 
 var _MemberList2 = _interopRequireDefault(_MemberList);
 
-var _AddMemberModal = __webpack_require__(43);
+var _AddOrEditMemberModal = __webpack_require__(43);
 
-var _AddMemberModal2 = _interopRequireDefault(_AddMemberModal);
+var _AddOrEditMemberModal2 = _interopRequireDefault(_AddOrEditMemberModal);
 
 var _DelMemberModal = __webpack_require__(44);
 
@@ -18539,9 +18539,9 @@ var _MembersProvider = __webpack_require__(45);
 
 var _MembersProvider2 = _interopRequireDefault(_MembersProvider);
 
-var _AddRemoveMember = __webpack_require__(46);
+var _CrudMemberIcons = __webpack_require__(46);
 
-var _AddRemoveMember2 = _interopRequireDefault(_AddRemoveMember);
+var _CrudMemberIcons2 = _interopRequireDefault(_CrudMemberIcons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18566,8 +18566,9 @@ var App = function (_Component) {
         _this.state = {
             members: [],
             currMemberIndex: 0,
-            showAddMemberCmp: false,
-            showDelMemberCmp: false
+            showAddOrEditMemberCmp: false,
+            showDelMemberCmp: false,
+            editMemberCmp: false
         };
         _this.forwardToWebsite = _this.forwardToWebsite.bind(_this);
         _this.changeMemberClickHandler = _this.changeMemberClickHandler.bind(_this);
@@ -18589,12 +18590,13 @@ var App = function (_Component) {
             });
         }
     }, {
-        key: 'addMemberModal',
-        value: function addMemberModal(e) {
+        key: 'addEditMemberModal',
+        value: function addEditMemberModal(e, isEdit) {
             e.stopPropagation();
 
             this.setState({
-                showAddMemberCmp: true
+                showAddOrEditMemberCmp: true,
+                editMemberCmp: isEdit
             });
         }
     }, {
@@ -18637,29 +18639,41 @@ var App = function (_Component) {
     }, {
         key: 'addMemberToList',
         value: function addMemberToList(config) {
-            var members = [].concat(_toConsumableArray(this.state.members), [config]);
+            var _state2 = this.state,
+                editMemberCmp = _state2.editMemberCmp,
+                members = _state2.members,
+                currMemberIndex = _state2.currMemberIndex;
+
+
+            if (editMemberCmp) {
+                members.splice(currMemberIndex, 1);
+            }
+
+            members = [].concat(_toConsumableArray(members), [config]);
 
             this.updateLocalStorage(members);
 
             this.setState({
                 members: members,
-                showAddMemberCmp: false
+                showAddOrEditMemberCmp: false,
+                editMemberCmp: false
             });
         }
     }, {
         key: 'closeModal',
         value: function closeModal() {
             this.setState({
-                showAddMemberCmp: false,
-                showDelMemberCmp: false
+                showAddOrEditMemberCmp: false,
+                showDelMemberCmp: false,
+                editMemberCmp: false
             });
         }
     }, {
         key: 'forwardToWebsite',
         value: function forwardToWebsite(property) {
-            var _state2 = this.state,
-                members = _state2.members,
-                currMemberIndex = _state2.currMemberIndex;
+            var _state3 = this.state,
+                members = _state3.members,
+                currMemberIndex = _state3.currMemberIndex;
 
 
             window.open(members[currMemberIndex][property]);
@@ -18676,11 +18690,12 @@ var App = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var _state3 = this.state,
-                members = _state3.members,
-                currMemberIndex = _state3.currMemberIndex,
-                showAddMemberCmp = _state3.showAddMemberCmp,
-                showDelMemberCmp = _state3.showDelMemberCmp;
+            var _state4 = this.state,
+                members = _state4.members,
+                currMemberIndex = _state4.currMemberIndex,
+                showAddOrEditMemberCmp = _state4.showAddOrEditMemberCmp,
+                showDelMemberCmp = _state4.showDelMemberCmp,
+                editMemberCmp = _state4.editMemberCmp;
             var _members$currMemberIn = members[currMemberIndex],
                 picture = _members$currMemberIn.picture,
                 fullname = _members$currMemberIn.fullname,
@@ -18694,7 +18709,7 @@ var App = function (_Component) {
             return React.createElement(
                 React.Fragment,
                 null,
-                !showDelMemberCmp && !showAddMemberCmp ? React.createElement(
+                !showDelMemberCmp && !showAddOrEditMemberCmp ? React.createElement(
                     'div',
                     { id: 'app_content', className: 'main_wrapper' },
                     React.createElement(_MainBox2.default, { picture: picture,
@@ -18708,19 +18723,24 @@ var App = function (_Component) {
                     React.createElement(_MemberList2.default, { members: members,
                         currMemberIndex: currMemberIndex,
                         clickHandler: this.changeMemberClickHandler }),
-                    React.createElement(_AddRemoveMember2.default, { handleAddClick: function handleAddClick(e) {
-                            return _this2.addMemberModal(e);
+                    React.createElement(_CrudMemberIcons2.default, { handleAddClick: function handleAddClick(e) {
+                            return _this2.addEditMemberModal(e, false);
+                        },
+                        handleEditClick: function handleEditClick(e) {
+                            return _this2.addEditMemberModal(e, true);
                         },
                         handleRmvClick: function handleRmvClick(e) {
                             return _this2.removeMemberModal(e);
                         },
                         permitToRemove: members.length > 1 })
-                ) : showAddMemberCmp ? React.createElement(_AddMemberModal2.default, { clickHandler: function clickHandler(config) {
+                ) : showAddOrEditMemberCmp ? React.createElement(_AddOrEditMemberModal2.default, { clickHandler: function clickHandler(config) {
                         return _this2.addMemberToList(config);
                     },
                     closeHandler: function closeHandler() {
                         return _this2.closeModal();
-                    } }) : React.createElement(_DelMemberModal2.default, { clickHandler: function clickHandler() {
+                    },
+                    isEditMember: editMemberCmp,
+                    member: members[currMemberIndex] }) : React.createElement(_DelMemberModal2.default, { clickHandler: function clickHandler() {
                         return _this2.removeMemberFromList();
                     },
                     closeHandler: function closeHandler() {
@@ -18896,11 +18916,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(7);
+var _reactIconBase = __webpack_require__(5);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -18937,7 +18957,7 @@ module.exports = exports['default'];
 
 var emptyFunction = __webpack_require__(2);
 var invariant = __webpack_require__(4);
-var warning = __webpack_require__(6);
+var warning = __webpack_require__(7);
 var assign = __webpack_require__(3);
 
 var ReactPropTypesSecret = __webpack_require__(9);
@@ -19469,7 +19489,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   return ReactPropTypes;
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 37 */
@@ -19549,11 +19569,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(7);
+var _reactIconBase = __webpack_require__(5);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -19587,11 +19607,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(7);
+var _reactIconBase = __webpack_require__(5);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -19625,11 +19645,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactIconBase = __webpack_require__(7);
+var _reactIconBase = __webpack_require__(5);
 
 var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
 
@@ -19742,13 +19762,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AddMemberModal = function (_Modal) {
-    _inherits(AddMemberModal, _Modal);
+var AddOrEditMemberModal = function (_Modal) {
+    _inherits(AddOrEditMemberModal, _Modal);
 
-    function AddMemberModal() {
-        _classCallCheck(this, AddMemberModal);
+    function AddOrEditMemberModal() {
+        _classCallCheck(this, AddOrEditMemberModal);
 
-        var _this = _possibleConstructorReturn(this, (AddMemberModal.__proto__ || Object.getPrototypeOf(AddMemberModal)).call(this));
+        var _this = _possibleConstructorReturn(this, (AddOrEditMemberModal.__proto__ || Object.getPrototypeOf(AddOrEditMemberModal)).call(this));
 
         _this.state = {
             fullname: '',
@@ -19765,7 +19785,7 @@ var AddMemberModal = function (_Modal) {
         return _this;
     }
 
-    _createClass(AddMemberModal, [{
+    _createClass(AddOrEditMemberModal, [{
         key: 'validateForm',
         value: function validateForm(key, value) {
             if (key === 'fullname') {
@@ -19797,11 +19817,39 @@ var AddMemberModal = function (_Modal) {
             this.props.clickHandler(obj);
         }
     }, {
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            var _props$member = this.props.member,
+                fullname = _props$member.fullname,
+                email = _props$member.email,
+                phoneNumber = _props$member.phoneNumber,
+                title = _props$member.title,
+                picture = _props$member.picture,
+                facebook = _props$member.facebook,
+                linkedin = _props$member.linkedin;
+
+
+            if (this.props.isEditMember) {
+                this.setState({
+                    fullname: fullname,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    title: title,
+                    picture: picture,
+                    facebook: facebook,
+                    linkedin: linkedin,
+                    isValidForm: true
+                });
+            }
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
 
-            var classname = this.props.classname;
+            var _props = this.props,
+                classname = _props.classname,
+                isEditMember = _props.isEditMember;
             var _state = this.state,
                 fullname = _state.fullname,
                 email = _state.email,
@@ -19904,7 +19952,7 @@ var AddMemberModal = function (_Modal) {
                             return _this2.closeModal();
                         } }),
                     React.createElement('input', { type: 'submit',
-                        value: 'Add Member',
+                        value: (isEditMember ? "Edit" : "Add") + " Member",
                         className: !isValidForm ? "disabled_submit_btn modal_btn positive_btn" : "modal_btn positive_btn",
                         disabled: !isValidForm })
                 )
@@ -19912,10 +19960,10 @@ var AddMemberModal = function (_Modal) {
         }
     }]);
 
-    return AddMemberModal;
+    return AddOrEditMemberModal;
 }(_Modal3.default);
 
-exports.default = AddMemberModal;
+exports.default = AddOrEditMemberModal;
 
 /***/ }),
 /* 44 */
@@ -20057,45 +20105,96 @@ var _Icon = __webpack_require__(17);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
+var _edit = __webpack_require__(47);
+
+var _edit2 = _interopRequireDefault(_edit);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var AddRemoveMember = function AddRemoveMember(_ref) {
+var CrudMemberIcons = function CrudMemberIcons(_ref) {
     var handleRmvClick = _ref.handleRmvClick,
         handleAddClick = _ref.handleAddClick,
+        handleEditClick = _ref.handleEditClick,
         permitToRemove = _ref.permitToRemove;
 
 
-    var classname = "add_remove_btn_container member_btn remove_btn_container \" " + (!permitToRemove ? "disabled" : null);
+    var baseClsName = "crud_btn_container member_btn";
+    var remClsName = baseClsName + " remove_btn_container \" " + (!permitToRemove ? "disabled" : null);
+    var addClsName = baseClsName + " add_btn_container";
+    var editClsName = baseClsName + " edit_btn_container";
 
     return React.createElement(
         "div",
         { className: "additional_btn" },
         React.createElement(
             "div",
-            { className: classname, onClick: handleRmvClick },
+            { className: remClsName, onClick: handleRmvClick },
             React.createElement(_Icon2.default, { classname: "add_remove_btn remove_btn truncate" })
         ),
         React.createElement(
             "div",
-            { className: "add_remove_btn_container member_btn add_btn_container", onClick: handleAddClick },
+            { className: editClsName, onClick: handleEditClick },
+            React.createElement(_edit2.default, { className: "add_remove_btn edit_btn" })
+        ),
+        React.createElement(
+            "div",
+            { className: addClsName, onClick: handleAddClick },
             React.createElement(_Icon2.default, { classname: "add_remove_btn add_btn truncate" })
         )
     );
 };
 
-exports.default = AddRemoveMember;
+exports.default = CrudMemberIcons;
 
 /***/ }),
 /* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactIconBase = __webpack_require__(5);
+
+var _reactIconBase2 = _interopRequireDefault(_reactIconBase);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var FaEdit = function FaEdit(props) {
+    return _react2.default.createElement(
+        _reactIconBase2.default,
+        _extends({ viewBox: '0 0 40 40' }, props),
+        _react2.default.createElement(
+            'g',
+            null,
+            _react2.default.createElement('path', { d: 'm19.8 26.4l2.6-2.6-3.4-3.4-2.6 2.6v1.3h2.2v2.1h1.2z m9.8-16q-0.3-0.4-0.7 0l-7.8 7.8q-0.4 0.4 0 0.7t0.7 0l7.8-7.8q0.4-0.4 0-0.7z m1.8 13.2v4.3q0 2.6-1.9 4.5t-4.5 1.9h-18.6q-2.6 0-4.5-1.9t-1.9-4.5v-18.6q0-2.7 1.9-4.6t4.5-1.8h18.6q1.4 0 2.6 0.5 0.3 0.2 0.4 0.5 0.1 0.4-0.2 0.7l-1.1 1.1q-0.3 0.3-0.7 0.1-0.5-0.1-1-0.1h-18.6q-1.4 0-2.5 1.1t-1 2.5v18.6q0 1.4 1 2.5t2.5 1h18.6q1.5 0 2.5-1t1.1-2.5v-2.9q0-0.2 0.2-0.4l1.4-1.5q0.3-0.3 0.8-0.1t0.4 0.6z m-2.1-16.5l6.4 6.5-15 15h-6.4v-6.5z m9.9 3l-2.1 2-6.4-6.4 2.1-2q0.6-0.7 1.5-0.7t1.5 0.7l3.4 3.4q0.6 0.6 0.6 1.5t-0.6 1.5z' })
+        )
+    );
+};
+
+exports.default = FaEdit;
+module.exports = exports['default'];
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(48);
+var content = __webpack_require__(49);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(50)(content, {});
+var update = __webpack_require__(51)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -20112,21 +20211,21 @@ if(false) {
 }
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(49)();
+exports = module.exports = __webpack_require__(50)();
 // imports
 
 
 // module
-exports.push([module.i, "body{\r\n    background:linear-gradient(to left, red , orange);\r\n}\r\n\r\n.main_wrapper{\r\n    width:500px;\r\n    height:550px;\r\n    position:absolute;\r\n    top:50%;\r\n    left:50%;\r\n    transform:translate(-50%, -50%);\r\n}\r\n\r\n.main_box{\r\n    background:#fff;\r\n    width:350px;\r\n    height:440px;\r\n    border-radius:12%;\r\n    text-align:center;\r\n    box-shadow:0 0 100px;\r\n    margin:0 auto;\r\n}\r\n\r\n.profile_icon_section{\r\n    padding-top:10px;\r\n}\r\n\r\n.img_icon{\r\n    width:calc(100% / 2);\r\n    border-radius:50%;\r\n}\r\n\r\n.social_icon{\r\n    width:40px;\r\n    height:40px;\r\n    padding:5px;\r\n    cursor:pointer;\r\n}\r\n\r\n.list_member_pic{\r\n    width:70px;\r\n    height:70px;\r\n    cursor:pointer;\r\n}\r\n\r\n.list_member_pic:hover{\r\n    box-shadow:0px 0px 6px;\r\n}\r\n\r\n.list_member_pic_wrapper{\r\n    padding:5px;\r\n}\r\n\r\n.member_title{\r\n    color:gray;\r\n    padding-left:20px;\r\n    padding-right: 20px;\r\n}\r\n\r\n.member_list_wrapper{\r\n    background:#fff;\r\n    width:80%;\r\n    display:flex;\r\n    justify-content: space-around;\r\n    flex-wrap:wrap;\r\n    border-radius:10px;\r\n    margin:35px auto 0 auto;\r\n    box-shadow:0 0 100px;\r\n    max-height:168px;\r\n    overflow-y:auto;\r\n}\r\n\r\n.additional_btn{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n\r\n.add_remove_btn_container{\r\n    margin:20px;\r\n}\r\n\r\n.add_remove_btn_container.disabled{\r\n    animation:none;\r\n    background:darkgrey;\r\n}\r\n\r\n.add_remove_btn_container.disabled .remove_btn{\r\n    cursor:default;\r\n}\r\n\r\n.member_btn{\r\n    width:50px;\r\n    height:50px;\r\n    border-radius: 50%;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    animation-duration: 3s;\r\n    animation-iteration-count:10;\r\n}\r\n\r\n.add_btn_container{\r\n    background:#BD3;\r\n}\r\n\r\n.remove_btn_container{\r\n    background:orangered;\r\n}\r\n\r\n@keyframes plus_btn{\r\n    from {box-shadow:0 0 15px;}\r\n    to {box-shadow:0 0 50px;background-color:greenyellow;}\r\n}\r\n\r\n@keyframes minus_btn{\r\n    from {box-shadow:0 0 15px;}\r\n    to {box-shadow:0 0 50px;background-color:red;}\r\n}\r\n\r\n.add_btn_container:hover{\r\n    animation-name: plus_btn;\r\n}\r\n\r\n.remove_btn_container:hover{\r\n    animation-name: minus_btn;\r\n}\r\n\r\n.add_remove_btn{\r\n    text-align: center;\r\n    color:#000;\r\n    position: relative;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    cursor:pointer;\r\n}\r\n\r\n.add_remove_btn.remove_btn{\r\n    top:45%;\r\n}\r\n\r\n.add_remove_btn:after{\r\n    font-weight:900;\r\n    font-size:xx-large;\r\n}\r\n\r\n.add_remove_btn.add_btn:after{\r\n    content:'+';\r\n}\r\n\r\n.add_remove_btn.remove_btn:after{\r\n    content:'-';\r\n}\r\n\r\n.truncate{\r\n    overflow:hidden;\r\n    white-space:nowrap;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.default_modal{\r\n    width:280px;\r\n    height:350px;\r\n    padding:50px;\r\n    background:#fff;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    border-radius:10px;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    transform:translate(-50%, -50%);\r\n}\r\n\r\n.modal_form_label{\r\n    margin-right:10px;\r\n    margin-top:15px;\r\n}\r\n\r\n.modal_form{\r\n    display:flex;\r\n    justify-content: space-between;\r\n    flex-wrap:wrap;\r\n}\r\n\r\n.modal_form input{\r\n    border:1px solid rgba(155,155,155,0.5);\r\n    height:22px;\r\n    width:200px;\r\n    margin-top:15px;\r\n    font-size:16px;\r\n    border-radius: 5px;\r\n}\r\n\r\ninput.error{\r\n    border:1px solid red;\r\n}\r\n\r\n.modal_btn{\r\n    margin:0 auto;\r\n    margin-top:30px !important;\r\n    border:none;\r\n    border-radius:10px;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    outline:none;\r\n    width:120px !important;\r\n    height:50px !important;\r\n    cursor:pointer;\r\n    font-weight: 600;\r\n}\r\n\r\n.modal_btn:hover{\r\n    box-shadow:0px 0px 13px;\r\n}\r\n\r\n.positive_btn{\r\n    background:#BD3;\r\n}\r\n\r\n.disabled_submit_btn{\r\n    background-color: rgba(0,0,0,0.5);\r\n    color:#000;\r\n}\r\n\r\n.positive_btn:disabled{\r\n    cursor:default;\r\n    box-shadow:none !important;\r\n}\r\n\r\n.negative_btn{\r\n    background:#B43;\r\n}\r\n\r\n.curtain{\r\n    visibility:hidden;\r\n}\r\n\r\n.remove_message{\r\n    text-align:center;\r\n}\r\n\r\n.removeModal{\r\n    height:175px;\r\n}\r\n\r\n.default_modal .btn_section{\r\n    display:flex;\r\n}", ""]);
+exports.push([module.i, "body{\r\n    background:linear-gradient(to left, red , orange);\r\n}\r\n\r\n.main_wrapper{\r\n    width:500px;\r\n    height:550px;\r\n    position:absolute;\r\n    top:50%;\r\n    left:50%;\r\n    transform:translate(-50%, -50%);\r\n}\r\n\r\n.main_box{\r\n    background:#fff;\r\n    width:350px;\r\n    height:440px;\r\n    border-radius:12%;\r\n    text-align:center;\r\n    box-shadow:0 0 100px;\r\n    margin:0 auto;\r\n}\r\n\r\n.profile_icon_section{\r\n    padding-top:10px;\r\n}\r\n\r\n.img_icon{\r\n    width:calc(100% / 2);\r\n    border-radius:50%;\r\n}\r\n\r\n.social_icon{\r\n    width:40px;\r\n    height:40px;\r\n    padding:5px;\r\n    cursor:pointer;\r\n}\r\n\r\n.list_member_pic{\r\n    width:70px;\r\n    height:70px;\r\n    cursor:pointer;\r\n}\r\n\r\n.list_member_pic:hover{\r\n    box-shadow:0px 0px 6px;\r\n}\r\n\r\n.list_member_pic_wrapper{\r\n    padding:5px;\r\n}\r\n\r\n.member_title{\r\n    color:gray;\r\n    padding-left:20px;\r\n    padding-right: 20px;\r\n}\r\n\r\n.member_list_wrapper{\r\n    background:#fff;\r\n    width:80%;\r\n    display:flex;\r\n    justify-content: space-around;\r\n    flex-wrap:wrap;\r\n    border-radius:10px;\r\n    margin:35px auto 0 auto;\r\n    box-shadow:0 0 100px;\r\n    max-height:168px;\r\n    overflow-y:auto;\r\n}\r\n\r\n.additional_btn{\r\n    display:flex;\r\n    justify-content: center;\r\n}\r\n\r\n.crud_btn_container{\r\n    margin:20px;\r\n}\r\n\r\n.crud_btn_container.disabled{\r\n    animation:none;\r\n    background:darkgrey;\r\n}\r\n\r\n.crud_btn_container.disabled .remove_btn{\r\n    cursor:default;\r\n}\r\n\r\n.member_btn{\r\n    width:50px;\r\n    height:50px;\r\n    border-radius: 50%;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    animation-duration: 3s;\r\n    animation-iteration-count:10;\r\n}\r\n\r\n.add_btn_container{\r\n    background:#BD3;\r\n}\r\n\r\n.remove_btn_container{\r\n    background:orangered;\r\n}\r\n\r\n.edit_btn_container{\r\n    background:darkorange;\r\n}\r\n\r\n@keyframes plus_btn{\r\n    from {box-shadow:0 0 15px;}\r\n    to {box-shadow:0 0 50px;background-color:greenyellow;}\r\n}\r\n\r\n@keyframes edit_btn{\r\n    from {box-shadow:0 0 15px;}\r\n    to {box-shadow:0 0 50px;background-color:darkgoldenrod;}\r\n}\r\n\r\n@keyframes minus_btn{\r\n    from {box-shadow:0 0 15px;}\r\n    to {box-shadow:0 0 50px;background-color:red;}\r\n}\r\n\r\n.add_btn_container:hover{\r\n    animation-name: plus_btn;\r\n}\r\n\r\n.remove_btn_container:hover{\r\n    animation-name: minus_btn;\r\n}\r\n\r\n.edit_btn_container:hover{\r\n    animation-name: edit_btn;\r\n}\r\n\r\n.add_remove_btn{\r\n    text-align: center;\r\n    color:#000;\r\n    position: relative;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    cursor:pointer;\r\n}\r\n\r\n.add_remove_btn.edit_btn{\r\n    transform:translate(-50%, -50%);\r\n    left:50%;\r\n}\r\n\r\n.add_remove_btn.remove_btn{\r\n    top:45%;\r\n}\r\n\r\n.add_remove_btn:after{\r\n    font-weight:900;\r\n    font-size:xx-large;\r\n}\r\n\r\n.add_remove_btn.add_btn:after{\r\n    content:'+';\r\n}\r\n\r\n.add_remove_btn.remove_btn:after{\r\n    content:'-';\r\n}\r\n\r\n.truncate{\r\n    overflow:hidden;\r\n    white-space:nowrap;\r\n    text-overflow: ellipsis;\r\n}\r\n\r\n.default_modal{\r\n    width:280px;\r\n    height:350px;\r\n    padding:50px;\r\n    background:#fff;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    border-radius:10px;\r\n    position:absolute;\r\n    left:50%;\r\n    top:50%;\r\n    transform:translate(-50%, -50%);\r\n}\r\n\r\n.modal_form_label{\r\n    margin-right:10px;\r\n    margin-top:15px;\r\n}\r\n\r\n.modal_form{\r\n    display:flex;\r\n    justify-content: space-between;\r\n    flex-wrap:wrap;\r\n}\r\n\r\n.modal_form input{\r\n    border:1px solid rgba(155,155,155,0.5);\r\n    height:22px;\r\n    width:200px;\r\n    margin-top:15px;\r\n    font-size:16px;\r\n    border-radius: 5px;\r\n}\r\n\r\ninput.error{\r\n    border:1px solid red;\r\n}\r\n\r\n.modal_btn{\r\n    margin:0 auto;\r\n    margin-top:30px !important;\r\n    border:none;\r\n    border-radius:10px;\r\n    box-shadow:0 0 15px rgba(0,0,0,0.5);\r\n    outline:none;\r\n    width:120px !important;\r\n    height:50px !important;\r\n    cursor:pointer;\r\n    font-weight: 600;\r\n}\r\n\r\n.modal_btn:hover{\r\n    box-shadow:0px 0px 13px;\r\n}\r\n\r\n.positive_btn{\r\n    background:#BD3;\r\n}\r\n\r\n.disabled_submit_btn{\r\n    background-color: rgba(0,0,0,0.5);\r\n    color:#000;\r\n}\r\n\r\n.positive_btn:disabled{\r\n    cursor:default;\r\n    box-shadow:none !important;\r\n}\r\n\r\n.negative_btn{\r\n    background:#B43;\r\n}\r\n\r\n.curtain{\r\n    visibility:hidden;\r\n}\r\n\r\n.remove_message{\r\n    text-align:center;\r\n}\r\n\r\n.removeModal{\r\n    height:175px;\r\n}\r\n\r\n.default_modal .btn_section{\r\n    display:flex;\r\n}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports) {
 
 /*
@@ -20182,7 +20281,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports) {
 
 /*

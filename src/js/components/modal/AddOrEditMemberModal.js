@@ -1,6 +1,6 @@
 import Modal from './Modal';
 
-class AddMemberModal extends Modal{
+class AddOrEditMemberModal extends Modal{
 
     constructor(){
         super();
@@ -54,8 +54,25 @@ class AddMemberModal extends Modal{
         this.props.clickHandler(obj);
     }
 
+    componentWillMount() {
+        const {fullname, email, phoneNumber, title, picture, facebook, linkedin} = this.props.member;
+
+        if(this.props.isEditMember){
+            this.setState({
+                fullname:fullname,
+                email:email,
+                phoneNumber:phoneNumber,
+                title:title,
+                picture:picture,
+                facebook:facebook,
+                linkedin:linkedin,
+                isValidForm:true
+            });
+        }
+    }
+
     render(){
-        const {classname} = this.props;
+        const {classname, isEditMember} = this.props;
         const {fullname, email, phoneNumber, title, picture, facebook, linkedin, isValidForm} = this.state;
 
         return <div className={classname || this.defaultModalClass}>
@@ -115,7 +132,7 @@ class AddMemberModal extends Modal{
                                className="modal_btn negative_btn"
                                onClick={() => this.closeModal()}/>
                         <input type="submit"
-                               value="Add Member"
+                               value={(isEditMember ? "Edit" : "Add") + " Member"}
                                className={!isValidForm ? "disabled_submit_btn modal_btn positive_btn" :
                                    "modal_btn positive_btn"}
                                disabled={!isValidForm}/>
@@ -124,4 +141,4 @@ class AddMemberModal extends Modal{
     }
 }
 
-export default AddMemberModal;
+export default AddOrEditMemberModal;

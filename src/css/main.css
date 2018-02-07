@@ -75,16 +75,16 @@ body{
     justify-content: center;
 }
 
-.add_remove_btn_container{
+.crud_btn_container{
     margin:20px;
 }
 
-.add_remove_btn_container.disabled{
+.crud_btn_container.disabled{
     animation:none;
     background:darkgrey;
 }
 
-.add_remove_btn_container.disabled .remove_btn{
+.crud_btn_container.disabled .remove_btn{
     cursor:default;
 }
 
@@ -105,9 +105,18 @@ body{
     background:orangered;
 }
 
+.edit_btn_container{
+    background:darkorange;
+}
+
 @keyframes plus_btn{
     from {box-shadow:0 0 15px;}
     to {box-shadow:0 0 50px;background-color:greenyellow;}
+}
+
+@keyframes edit_btn{
+    from {box-shadow:0 0 15px;}
+    to {box-shadow:0 0 50px;background-color:darkgoldenrod;}
 }
 
 @keyframes minus_btn{
@@ -123,6 +132,10 @@ body{
     animation-name: minus_btn;
 }
 
+.edit_btn_container:hover{
+    animation-name: edit_btn;
+}
+
 .add_remove_btn{
     text-align: center;
     color:#000;
@@ -130,6 +143,11 @@ body{
     top: 50%;
     transform: translateY(-50%);
     cursor:pointer;
+}
+
+.add_remove_btn.edit_btn{
+    transform:translate(-50%, -50%);
+    left:50%;
 }
 
 .add_remove_btn.remove_btn{

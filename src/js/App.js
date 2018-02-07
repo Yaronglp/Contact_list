@@ -1,10 +1,10 @@
 import {Component} from 'react';
 import MainBox from './components/member/MainBox';
 import MemberList from './components/member/MemberList';
-import AddMemberModal from './components/modal/AddMemberModal';
+import AddOrEditMemberModal from './components/modal/AddOrEditMemberModal';
 import DelMemberModal from './components/modal/DelMemberModal';
 import MembersProvider from "./components/member/MembersProvider";
-import AddRemoveMember from "./components/member/AddRemoveMember";
+import CrudMemberIcons from "./components/member/CrudMemberIcons";
 
 const LOCAL_STORAGE_KEY = 'contact_members';
 
@@ -15,8 +15,9 @@ export default class App extends Component{
         this.state = {
           members:[],
           currMemberIndex:0,
-          showAddMemberCmp:false,
-          showDelMemberCmp:false
+          showAddOrEditMemberCmp:false,
+          showDelMemberCmp:false,
+          editMemberCmp:false
         };
         this.forwardToWebsite = this.forwardToWebsite.bind(this);
         this.changeMemberClickHandler = this.changeMemberClickHandler.bind(this);
@@ -34,11 +35,12 @@ export default class App extends Component{
         });
     }
 
-    addMemberModal(e){
+    addEditMemberModal(e, isEdit){
         e.stopPropagation();
 
         this.setState({
-            showAddMemberCmp:true
+            showAddOrEditMemberCmp:true,
+            editMemberCmp:isEdit
         });
     }
 
@@ -75,23 +77,28 @@ export default class App extends Component{
     }
 
     addMemberToList(config){
-        let members = [
-            ...this.state.members,
-            config
-        ];
+        let {editMemberCmp, members, currMemberIndex} = this.state;
+
+        if(editMemberCmp){
+            members.splice(currMemberIndex, 1);
+        }
+
+        members = [...members, config];
 
         this.updateLocalStorage(members);
 
         this.setState({
             members,
-            showAddMemberCmp:false
+            showAddOrEditMemberCmp:false,
+            editMemberCmp:false,
         });
     }
 
     closeModal(){
         this.setState({
-            showAddMemberCmp:false,
-            showDelMemberCmp:false
+            showAddOrEditMemberCmp:false,
+            showDelMemberCmp:false,
+            editMemberCmp:false
         });
     }
 
@@ -108,12 +115,12 @@ export default class App extends Component{
     }
 
     render(){
-        const {members, currMemberIndex, showAddMemberCmp, showDelMemberCmp} = this.state;
+        const {members, currMemberIndex, showAddOrEditMemberCmp, showDelMemberCmp, editMemberCmp} = this.state;
         const {picture, fullname, email,phoneNumber, title, linkedin, facebook} = members[currMemberIndex];
 
         return (
             <React.Fragment>
-                {!showDelMemberCmp && !showAddMemberCmp ?
+                {!showDelMemberCmp && !showAddOrEditMemberCmp ?
                     <div id="app_content" className="main_wrapper">
                         <MainBox picture={picture}
                                  fullname={fullname}
@@ -126,13 +133,16 @@ export default class App extends Component{
                         <MemberList members={members}
                                     currMemberIndex={currMemberIndex}
                                     clickHandler={this.changeMemberClickHandler}/>
-                        <AddRemoveMember handleAddClick={(e) => this.addMemberModal(e)}
+                        <CrudMemberIcons handleAddClick={(e) => this.addEditMemberModal(e, false)}
+                                         handleEditClick={(e) => this.addEditMemberModal(e, true)}
                                          handleRmvClick={(e) => this.removeMemberModal(e)}
                                          permitToRemove={members.length > 1}/>
                     </div> :
-                    showAddMemberCmp ?
-                    <AddMemberModal clickHandler={(config) => this.addMemberToList(config)}
-                                    closeHandler={() => this.closeModal()}/> :
+                    showAddOrEditMemberCmp ?
+                    <AddOrEditMemberModal clickHandler={(config) => this.addMemberToList(config)}
+                                          closeHandler={() => this.closeModal()}
+                                          isEditMember={editMemberCmp}
+                                          member={members[currMemberIndex]}/> :
                     <DelMemberModal clickHandler={() => this.removeMemberFromList()}
                                     closeHandler={() => this.closeModal()}
                                     member={members[currMemberIndex]}/>}
