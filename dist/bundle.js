@@ -18647,9 +18647,10 @@ var App = function (_Component) {
 
             if (editMemberCmp) {
                 members.splice(currMemberIndex, 1);
+                members.splice(currMemberIndex, 0, config);
+            } else {
+                members = [].concat(_toConsumableArray(members), [config]);
             }
-
-            members = [].concat(_toConsumableArray(members), [config]);
 
             this.updateLocalStorage(members);
 

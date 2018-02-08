@@ -81,9 +81,10 @@ export default class App extends Component{
 
         if(editMemberCmp){
             members.splice(currMemberIndex, 1);
+            members.splice(currMemberIndex, 0, config);
+        }else{
+            members = [...members, config];
         }
-
-        members = [...members, config];
 
         this.updateLocalStorage(members);
 
