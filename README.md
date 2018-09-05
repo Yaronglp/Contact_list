@@ -1,6 +1,6 @@
 # Contact_list
-Contact list implementation using react.js - part of greater project
+Simple contact list implementation using react.js
 
-Works on Desktop-Chrome
+Tested on Chrome (windows env)
 
 Link for playing app: https://yaronglp.github.io/Contact_list/dist
